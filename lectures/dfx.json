@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "lectures_backend": {
+      "main": "src/lectures_backend/main.mo",
+      "type": "motoko"
+    },
+    "lectures_frontend": {
+      "dependencies": [
+        "lectures_backend"
+      ],
+      "source": [
+        "src/lectures_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "lectures_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
