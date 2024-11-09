@@ -1,5 +1,6 @@
 import Debug "mo:base/Debug";
 import Buffer "mo:base/Buffer";
+import Iter "mo:base/Iter";
 
 actor HelloWorld {
   // Create a buffer to hold tasks (each task is just a Text)
@@ -17,6 +18,18 @@ actor HelloWorld {
       Debug.print(i);  // Print each task
     };
   };
+
+
+func findIndex(buffer: Buffer.Buffer<Text>, item: Text) : ?Nat {
+        // Iterate through the buffer
+        for (i in Iter.range(0, buffer.size() - 1)) {
+            if (buffer.get(i) == item) {
+                Debug.print("Item found");
+                return ?i;
+            }
+        };
+        return null; 
+    };
 
     
 
