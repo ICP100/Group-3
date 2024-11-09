@@ -9,7 +9,13 @@
     "prebuild": "npm run prebuild --workspaces --if-present",
     "pretest": "npm run prebuild --workspaces --if-present",
     "start": "npm start --workspaces --if-present",
-    "test": "npm test --workspaces --if-present"
+    "test": "npm test --workspaces --if-present",
+    "install-dfx": "sh -ci \"$(curl -fsSL https://internetcomputer.org/install.sh)\"",
+    "source-env": ". \"$HOME/.local/share/dfx/env\"",
+    "install-deps": "cd src/lectures_frontend && npm install",
+    "install-vite": "cd src/lectures_frontend && npm install vite --save-dev",
+    "setup": "npm run install-dfx && npm run source-env && npm run install-deps && npm run install-vite"
+
   },
   "type": "module",
   "workspaces": [
